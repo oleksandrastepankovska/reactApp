@@ -1,29 +1,36 @@
 import React from 'react';
-import styled from 'styled-components';
+import houseLogo from '../../assets/house.svg';
+import commentsLogo from '../../assets/comments.svg';
+import bellLogo from '../../assets/bell.svg';
+import blackHouse from '../../assets/house2.svg';
+import useDropdown from 'react-dropdown-hook';
 
-const Wrapper = styled.div``;
-
-const Home = styled.div``;
-
-const Input = styled.input``;
-
-const RightIcons = styled.div``;
+// styles
+import { Wrapper, Home, Input, RightIcons, Logo, Menu } from './styles';
 
 const Header: React.FC = () => {
+  const [wrapperRef, dropdownOpen, toggleDropdown] = useDropdown();
+  
   return (
-    <Wrapper>
-        <img></img>
-        <Home>
-            <a href=""><img src="" alt=""/></a>
-            <p>Home</p>
-        </Home>
-        <Input></Input>
-        <RightIcons>
-            <a href=""><img src="" alt=""/></a>
-            <a href=""><img src="" alt=""/></a>
-            <a href=""><img src="" alt=""/></a>
-            <a href=""><img src="" alt=""/></a>
-        </RightIcons>
+    <Wrapper >
+      <Logo></Logo>
+      <Home ref={wrapperRef}>
+        <img onClick={toggleDropdown} src={blackHouse} />
+        {dropdownOpen && (
+          <Menu>
+            Home
+            Publications 
+            People
+          </Menu>
+        )}
+  
+      </Home>
+      <Input></Input>
+      <RightIcons>
+        <img src={houseLogo} />
+        <img src={commentsLogo} />
+        <img src={bellLogo} />
+      </RightIcons>
     </Wrapper>
   );
 };
