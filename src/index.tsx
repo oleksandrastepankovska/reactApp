@@ -4,8 +4,6 @@ import './index.css';
 import App from './components/MainPage/App';
 import reportWebVitals from './reportWebVitals';
 import Header from './components/Header';
-import useDropdown from 'react-dropdown-hook';
-
 
 ReactDOM.render(
   <React.StrictMode>

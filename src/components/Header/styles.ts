@@ -10,28 +10,15 @@ export const Wrapper = styled.div`
 `;
 
 export const Logo = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
   padding: 0 10px;
-`;
-
-
-export const Home = styled.div`
-  display: flex;
-  padding: 0 10px;
-  width: 250px;
-  justify-content: space-between;
-  margin-right: 80px;
-`;
-
-export const HomeRight = styled.div`
-  display: flex;
 `;
 
 export const Input = styled.input`
-  background: url(${searchLogo}) no-repeat scroll 7px 7px;
   border-radius: 5px;
   width: 480px;
+  height: 25px;
 `;
 
 export const RightIcons = styled.div`
@@ -59,3 +46,7 @@ export const HeaderRight = styled.div`
   justify-content: space-between;
   width: 100%;
 `;
+
+export const Dropdown = styled.img``;
+
+export const DownOutlined = styled.img``;
