@@ -1,5 +1,5 @@
 import React from 'react';
-import avatar from '../../assets/face.svg';
+import avatar from '../../assets/man.svg';
 import networkLogo from '../../assets/network.png';
 import networPlusLogo from '../../assets/network.svg';
 import publicationsLogo from '../../assets/publications.svg';
