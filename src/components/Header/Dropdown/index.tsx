@@ -8,9 +8,7 @@ import { Home, HomeRight, Icon } from './styles';
 
 const MenuView = () => (
     <Menu>
-      <Menu.Item key="0">
-        <a href="">Home</a>
-      </Menu.Item>
+      <Menu.Item key="0"><Icon src={Icons.homeIcon} />Home</Menu.Item>
       <Menu.Item key="1"><Icon src={Icons.yourPublicationsIcon} />Publications</Menu.Item>
       <Menu.Item key="3"><Icon src={Icons.peopleIcon} />People</Menu.Item>
       <Menu.Item key="4"><Icon src={Icons.entitiesIcon} />Entities</Menu.Item>

@@ -4,7 +4,6 @@ import networkLogo from '../../assets/network.png';
 import networPlusLogo from '../../assets/network.svg';
 import publicationsLogo from '../../assets/publications.svg';
 import publicationsPlusLogo from '../../assets/plus.svg';
-import Publications from '/Users/saskasaska/Desktop/frameworkReact/my-app/src/components/common/Publications'
 import {
 	Link
   } from "react-router-dom";

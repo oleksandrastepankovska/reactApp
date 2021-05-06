@@ -1,11 +1,6 @@
 import React from 'react';
-import houseLogo from '../../assets/house.svg';
-import commentsLogo from '../../assets/comments.svg';
-import bellLogo from '../../assets/bell.svg';
-import mainLogo from '../../assets/logo.png';
-import Publications from '../common/Publications'
 import Dropdown from './Dropdown';
-
+import Icons from '../../assets/index';
 
 // styles
 import { Wrapper, Input, RightIcons, Logo, Icon, HeaderLeft, HeaderRight} from './styles';
@@ -14,15 +9,15 @@ const Header: React.FC = () => {
   return (
     <Wrapper >
       <HeaderLeft>      
-        <Logo src={mainLogo} />
+        <Logo src={Icons.homeIcon} />
         <Dropdown />
       </HeaderLeft>
       <HeaderRight>
         <Input />
         <RightIcons>
-          <Icon src={houseLogo} />
-          <Icon src={commentsLogo} />
-          <Icon src={bellLogo} />
+          <Icon src={Icons.homeIcon} />
+          <Icon src={Icons.commentsIcon} />
+          <Icon src={Icons.bellIcon} />
         </RightIcons>
       </HeaderRight>
       

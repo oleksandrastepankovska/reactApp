@@ -10,9 +10,6 @@ import {
 
 
 import { Content } from './styles';
-import { Publication } from '../common/Publications/styles';
-import Publications from '../common/Publications';
-import { Entities } from '../Profile/styles';
 
 
 function App() {
