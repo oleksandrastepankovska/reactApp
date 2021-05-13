@@ -1,27 +1,25 @@
 import React from 'react';
 import Dropdown from './Dropdown';
 import Icons from '../../assets/index';
-
-// styles
-import { Wrapper, Input, RightIcons, Logo, Icon, HeaderLeft, HeaderRight} from './styles';
+import * as S from './styles';
 
 const Header: React.FC = () => {
   return (
-    <Wrapper >
-      <HeaderLeft>      
-        <Logo src={Icons.homeIcon} />
+    <S.Wrapper >
+      <S.HeaderLeft>      
+        <S.Logo src={Icons.homeIcon} />
         <Dropdown />
-      </HeaderLeft>
-      <HeaderRight>
-        <Input />
-        <RightIcons>
-          <Icon src={Icons.homeIcon} />
-          <Icon src={Icons.commentsIcon} />
-          <Icon src={Icons.bellIcon} />
-        </RightIcons>
-      </HeaderRight>
+      </S.HeaderLeft>
+      <S.HeaderRight>
+        <S.Input />
+        <S.RightIcons>
+          <S.Icon src={Icons.homeIcon} />
+          <S.Icon src={Icons.commentsIcon} />
+          <S.Icon src={Icons.bellIcon} />
+        </S.RightIcons>
+      </S.HeaderRight>
       
-    </Wrapper>
+    </S.Wrapper>
   );
 };
 

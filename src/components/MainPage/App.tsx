@@ -9,20 +9,20 @@ import {
   Link
 } from "react-router-dom";
 // styles
-import { Content, ContentRight } from './styles';
+import * as S from './styles';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Header />
-        <Content>
+        <S.Content>
           <Profile />
-          <ContentRight>
+          <S.ContentRight>
             <Publications />
             <Workspaces />
-          </ContentRight>
-        </Content>
+          </S.ContentRight>
+        </S.Content>
         <Switch>
           <Route path="/workspaces">
             WORKSPACE

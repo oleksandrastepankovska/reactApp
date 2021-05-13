@@ -42,24 +42,24 @@ const WORKSPACES_ITEMS = [
         lastUpdate: 'Last update 2 days ago',
         id: 2,
     },
-    // {
-    //     imgUrl: 'https://picsum.photos/130',
-    //     text: 'Client contract',
-    //     type: 'Contract',
-    //     usersCont: 150,
-    //     date: '07 Jan 2020',
-    //     lastUpdate: 'Last update 2 days ago',
-    //     id: 3,
-    // },
-    // {
-    //     imgUrl: 'https://picsum.photos/130',
-    //     text: 'Client contract',
-    //     type: 'Contract',
-    //     usersCont: 150,
-    //     date: '07 Jan 2020',
-    //     lastUpdate: 'Last update 2 days ago',
-    //     id: 4,
-    // },
+    {
+        imgUrl: 'https://picsum.photos/130',
+        text: 'Client contract',
+        type: 'Contract',
+        usersCont: 150,
+        date: '07 Jan 2020',
+        lastUpdate: 'Last update 2 days ago',
+        id: 3,
+    },
+    {
+        imgUrl: 'https://picsum.photos/130',
+        text: 'Client contract',
+        type: 'Contract',
+        usersCont: 150,
+        date: '07 Jan 2020',
+        lastUpdate: 'Last update 2 days ago',
+        id: 4,
+    },
 ];
 
 interface WorkspaceProps {
