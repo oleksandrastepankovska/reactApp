@@ -6,14 +6,18 @@ export const StyledLink = styled(Link)`
     color: black;
 `
 
-export const Wrapper = styled.div ``;
+export const Wrapper = styled.div `
+    display: inline-block;
+    margin-right: 40px;
+`;
+
 export const ProfileInfo = styled.div `
     text-align: center;
     width: 230px;
     height: 245px;
-    margin: 15px;
     padding: 15px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 4.5px;
 `;
 export const Avatar = styled.img `
     border-radius: 50%;

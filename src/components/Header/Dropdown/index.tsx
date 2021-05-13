@@ -6,8 +6,60 @@ import Icons from '../../../assets/index'
 
 import { Home, HomeRight, Icon } from './styles';
 
+// const MENU_ITEMS = [
+//   {
+//     title: 'Home',
+//     iconSrc: Icons.homeIcon,
+//   },
+//   {
+//     title: 'Home',
+//     iconSrc: Icons.homeIcon,
+//   },
+//   {
+//     title: 'Home',
+//     iconSrc: Icons.homeIcon,
+//   },
+//   {
+//     title: 'Home',
+//     iconSrc: Icons.homeIcon,
+//   },
+//   {
+//     title: 'Home',
+//     iconSrc: Icons.homeIcon,
+//   },
+//   {
+//     title: 'Home',
+//     iconSrc: Icons.homeIcon,
+//   },
+//   {
+//     title: 'Home',
+//     iconSrc: Icons.homeIcon,
+//   },
+//   {
+//     title: 'Home',
+//     iconSrc: Icons.homeIcon,
+//   },
+//   {
+//     title: 'Home',
+//     iconSrc: Icons.homeIcon,
+//   },
+//   {
+//     title: 'Home',
+//     iconSrc: Icons.homeIcon,
+//   },
+//   {
+//     title: 'Home',
+//     iconSrc: Icons.homeIcon,
+//   },
+//   {
+//     title: 'Home',
+//     iconSrc: Icons.homeIcon,
+//   },
+// ];
+
 const MenuView = () => (
     <Menu>
+      {/* {MENU_ITEMS.map(({ title, iconSrc }) => <Menu.Item key={title}><Icon src={iconSrc} />{title}</Menu.Item>)} */}
       <Menu.Item key="0"><Icon src={Icons.homeIcon} />Home</Menu.Item>
       <Menu.Item key="1"><Icon src={Icons.yourPublicationsIcon} />Publications</Menu.Item>
       <Menu.Item key="3"><Icon src={Icons.peopleIcon} />People</Menu.Item>

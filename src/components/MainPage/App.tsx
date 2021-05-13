@@ -1,16 +1,15 @@
-import React from 'react';
 import Header from '../Header';
 import Profile from '../Profile';
+import Publications from '../Publications';
+import Workspaces from '../Workspaces';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-
-
-import { Content } from './styles';
-
+// styles
+import { Content, ContentRight } from './styles';
 
 function App() {
   return (
@@ -19,6 +18,10 @@ function App() {
         <Header />
         <Content>
           <Profile />
+          <ContentRight>
+            <Publications />
+            <Workspaces />
+          </ContentRight>
         </Content>
         <Switch>
           <Route path="/workspaces">
