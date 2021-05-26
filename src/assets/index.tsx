@@ -19,7 +19,7 @@ import entities2Icon from '../assets/entities2.svg';
 import contractIcon from '../assets/edit-regular.svg';
 import privacyIcon from '../assets/privacy.svg';
 import settingsIcon from '../assets/settings.svg';
-import userIcon from '../assets/man.svg';
+import userIcon from '../assets/superhero.png';
 import background from '../assets/background.svg';
 
 export const Icons ={

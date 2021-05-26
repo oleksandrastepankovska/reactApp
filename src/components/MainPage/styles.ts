@@ -6,7 +6,6 @@ export const Content = styled.div`
 `;
 
 export const ContentRight = styled.div`
-    
 `;
 
 

@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
-export const Wrap = styled.div``;
+export const Wrap = styled.div` 
+    overflow: scroll;
+    width: 980px;
+    padding: 10px;
+    margin: 10px;
+`;
 
 export const Title = styled.div`
     font-size: 20px;
@@ -11,7 +16,7 @@ export const Title = styled.div`
 
 export const WorkspaceWrap = styled.div`
     margin-right: 10px;
-    width: 250px;
+    min-width: 250px;
     height: 200px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     border-radius: 4.5px;

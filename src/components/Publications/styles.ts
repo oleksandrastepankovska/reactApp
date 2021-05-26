@@ -3,7 +3,7 @@ import Icons from '../../assets/index';
 
 export const PublicationsWrap = styled.div`
     display: flex;
-    width: 100%;
+    width: 980px;
     height: 300px;
     border-radius: 4.5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);

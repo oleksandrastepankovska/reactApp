@@ -22,7 +22,7 @@ function App() {
             <Publications />
             <Workspaces />
           </S.ContentRight>
-        </S.Content>
+        </S.Content>                      
         <Switch>
           <Route path="/workspaces">
             WORKSPACE
