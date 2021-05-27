@@ -1,8 +1,7 @@
 import Header from '../Header';
 import Profile from '../Profile';
-import Publications from '../Publications';
-import Workspaces from '../Workspaces';
-import Comments from '../Comments/index'
+import HomePage from '../HomePage'
+import Entities from '../Entities'
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,22 +20,22 @@ function App() {
         <S.Content>
           <Profile />
           <S.ContentRight>
-            <Publications />
-            <Workspaces />
-            <Comments/>
-          </S.ContentRight>
-        </S.Content>                      
-        <Switch>
-          <Route path="/workspaces">
-            WORKSPACE
+          <Switch>
+          <Route path="/entities">
+            <Entities/>
           </Route>
-          <Route path="/publications">
-            YOUR PUBLICATIONS
+          <Route path="/people">
+            PEOPLE
           </Route>
-          <Route path="/network">
-            YOUR NETWORK
+          <Route path="/administration">
+            ADMINISTRATION
+          </Route>
+          <Route path="/">
+            <HomePage/>
           </Route>
         </Switch>
+          </S.ContentRight>
+        </S.Content>                      
       </div>
     </Router>
   );
