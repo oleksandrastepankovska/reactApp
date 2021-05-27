@@ -1,4 +1,3 @@
-import React from 'react';
 import Dropdown from './Dropdown';
 import Icons from '../../assets/index';
 import * as S from './styles';

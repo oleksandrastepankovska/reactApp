@@ -2,12 +2,14 @@ import Header from '../Header';
 import Profile from '../Profile';
 import Publications from '../Publications';
 import Workspaces from '../Workspaces';
+import Comments from '../Comments/index'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
+
 // styles
 import * as S from './styles';
 
@@ -21,6 +23,7 @@ function App() {
           <S.ContentRight>
             <Publications />
             <Workspaces />
+            <Comments/>
           </S.ContentRight>
         </S.Content>                      
         <Switch>
