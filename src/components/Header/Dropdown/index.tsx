@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { FC, useState, useEffect, useCallback } from 'react';
 import { Menu, Dropdown } from 'antd';
 import 'antd/dist/antd.css';
 import Icons from '../../../assets/index'
@@ -20,7 +20,7 @@ const MenuView = () => {
     return (
       <Menu>
         <input onChange={onInputChange} placeholder="Filter" />
-        {items.map(({ title, iconSrc }) => <S.StyledLink to={'/'+title} ><Menu.Item key={title}><S.Icon src={iconSrc} />{title}</Menu.Item></S.StyledLink>)}
+        {items.map(({ title, iconSrc }) =><Menu.Item key={title}><S.Icon alt="" src={iconSrc} />{title}</Menu.Item>)}
       </Menu>
     );
 };
