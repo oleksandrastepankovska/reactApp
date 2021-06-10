@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Icon from '../../../assets/index';
+import Icon from '../../../../assets/index';
 
 export const SingleCommentWrapper = styled.div`
     background-color: #fff;

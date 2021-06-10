@@ -1,4 +1,4 @@
-import Icons from '../../../assets/index'
+import Icons from '../../../../assets/index'
 import * as S from './styles';
 
 interface SingleCommentProps {

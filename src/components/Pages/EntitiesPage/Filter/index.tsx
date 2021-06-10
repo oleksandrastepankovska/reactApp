@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import Icons from '../../../assets';
+import Icons from '../../../../assets';
 import {FilterInput, FiltersRow, FilterWrapper, TextWithPlus, TextWithX} from '../SingleEntity/styles'
 
 export class FilterComp extends Component{

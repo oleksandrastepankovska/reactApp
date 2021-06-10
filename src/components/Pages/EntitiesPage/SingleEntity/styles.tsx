@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Icons from '../../../assets/index';
+import Icons from '../../../../assets/index';
 import { View, IListOrMosaicProps } from '../index'
 
 export const DropdownWrapper = styled.div``;

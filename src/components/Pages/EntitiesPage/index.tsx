@@ -1,13 +1,13 @@
 import {ChangeEvent, FC, useState} from 'react';
 import { useSelector } from 'react-redux';
-import Icons from '../../assets';
-import { IState } from '../../reducers';
-import { IPhotoReducer } from '../../reducers/PhotoReducers';
+import Icons from '../../../assets';
+import { IState } from '../../../reducers';
+import { IPhotoReducer } from '../../../reducers/PhotoReducers';
 import * as S from './SingleEntity/styles';
 import SingleEntity from './SingleEntity'
 import useDropdown from 'react-dropdown-hook';
 import { FilterComp } from './Filter'
-import ENTITIES_ITEMS from '../common/EntitiesItems'
+import ENTITIES_ITEMS from '../../common/EntitiesItems'
 
 
 export enum View {

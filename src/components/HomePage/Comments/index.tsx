@@ -1,6 +1,6 @@
-import Icons from '../../assets/index';
-import SingleComment from '../Comments/SingleComment'
-import COMMENT_ITEMS from '../common/CommentItems'
+import Icons from '../../../assets/index';
+import SingleComment from './SingleComment'
+import COMMENT_ITEMS from '../../common/CommentItems'
 
 //styles
 import {CommentsTitle, CommentsWrapper} from './SingleComment/styles';
