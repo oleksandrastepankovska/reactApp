@@ -2,8 +2,8 @@ import { ISinglePost } from '../../entities/Posts';
 
 export const GET_POST='GET_POST';
 
-export interface IPostTypes{
+export interface IPhotoTypes{
     GET_POST:{
-        postList: ISinglePost[];
+        postsList: ISinglePost[];
     }
 }
