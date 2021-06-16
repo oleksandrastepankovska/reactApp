@@ -1,9 +1,9 @@
 import React, {FC, useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 import Header from '../Header';
-import Profile from '../Profile';
+import Profile from '../LeftProfile';
 import HomePage from '../HomePage'
-import Entities from '../EntitiesPage'
+import Entities from '../Pages/EntitiesPage'
 
 // styles
 import * as S from './styles';
@@ -76,7 +76,7 @@ function App() {
       <div className="App">
         <Header />
         <S.Content>
-          <Profile />
+          <Profile user = {User}/>
           <S.ContentRight>
           <Switch>
           <Route path="/entities">
@@ -89,7 +89,7 @@ function App() {
             ADMINISTRATION
           </Route>
           <Route path="/">
-            <HomePage/>
+            <HomePage user = {User}/>
           </Route>
         </Switch>
           </S.ContentRight>

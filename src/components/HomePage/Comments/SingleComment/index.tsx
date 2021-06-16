@@ -1,33 +1,30 @@
-import Icons from '../../../../assets/index'
-import * as S from './styles';
+import React, {FC} from 'react';
+import { SingleCommentInner, SingleCommentTitle, SingleCommentText, CommentInfo, ComIcon, Update, SmallText } from './styles';
 
-interface SingleCommentProps {
-	title: string,
-	text: string,
-	companyName: string,
-	commentType:string,
-	smallIcon: string,
-	logo:string,
-	date: number,
+interface ISingleCommentProps {
+    title: string,
+    text: string,
+    companyName: string,
+    commentType: string,
+    smallIcon: string,
+    logo:string,
+    date: number,
+    userName:string,
 }
-
-const SingleComment: React.FC<SingleCommentProps> = (props) => {
-
-	const {title, text, companyName,commentType,smallIcon,logo, date} = props;
-
-	return(
-		<S.SingleCommentWrapper>
-           <S.SingleCommentTitle>{title}</S.SingleCommentTitle>
-           <S.SingleCommentText>{text}</S.SingleCommentText>
-            <S.CommentInfo>
-                <S.CommentIcon style = {{backgroundImage: `url(${logo})`}}/>
-                <S.SmallText>{companyName}</S.SmallText>
-                <S.CommentIcon style = {{backgroundImage: `url(${smallIcon})`}}></S.CommentIcon>
-                <S.SmallText>{commentType}</S.SmallText>
-                <S.Update>Last update {date} days ago</S.Update>
-            </S.CommentInfo>
-        </S.SingleCommentWrapper>
-	);
+export const SingleComment: FC<ISingleCommentProps> = (props) =>{
+    const {title, text, companyName, commentType,smallIcon,logo,date,userName} = props;
+    return(
+        <SingleCommentInner>
+           <SingleCommentTitle>{title}</SingleCommentTitle>
+           <SingleCommentText>{text}</SingleCommentText>
+            <CommentInfo>
+                <ComIcon style = {{backgroundImage: `url(${logo})`}}></ComIcon>
+                <SmallText>{companyName}</SmallText>
+                <ComIcon style = {{backgroundImage: `url(${smallIcon})`}}></ComIcon>
+                <SmallText>{commentType}</SmallText>
+                <Update style={{fontSize: "14px"}}>Last update {date} days ago by {userName}</Update>
+            </CommentInfo>
+        </SingleCommentInner>
+        
+    );
 };
-
-export default SingleComment;

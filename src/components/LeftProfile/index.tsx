@@ -2,17 +2,23 @@ import React from 'react';
 import Icons from '../../assets/index';
 import * as S from './styles';
 
-const Profile: React.FC = () => {
+interface IAsideUser {
+    user: {
+        name:string,
+        imgUrl:string,
+        jobTitle: string,
+        companyName: string
+    }
+
+}
+
+const Profile: React.FC<IAsideUser> = (props) => {
 	return(
 		<S.Wrapper>
 			<S.ProfileInfo>
-				<S.Avatar src={Icons.userIcon} />
-				<S.Name>
-					Humberta Swift
-				</S.Name>
-				<S.JobInfo>
-					Job Title - Company
-				</S.JobInfo>
+				<S.Avatar src={props.user.imgUrl} />
+				<S.Name>{props.user.name}</S.Name>
+				<S.JobInfo>{props.user.jobTitle} - {props.user.companyName}</S.JobInfo>
 				<S.NetworkInfo>
 					<img src={Icons.networkIcon} />
 					<S.StyledLink to="/network">Your Network</S.StyledLink>
@@ -24,11 +30,6 @@ const Profile: React.FC = () => {
 					<img src={Icons.plusIcon} />
 				</S.PublicationsInfo>
 			</S.ProfileInfo>
-			{/* <OtherOptions>
-				<Publications></Publications>
-				<Ecosystem></Ecosystem>
-				<Entities></Entities>
-			</OtherOptions> */}
 		</S.Wrapper>
 	);
 };

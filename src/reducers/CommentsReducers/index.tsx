@@ -1,4 +1,4 @@
-import {ISingleComment} from '../../entities/Comments';
+  import {ISingleComment} from '../../entities/Comments';
 import * as actionTypes from '../../actions/actionTypes/commentsType'
 
 export interface ICommentsReducer{

@@ -17,7 +17,7 @@ export const EntitiesPageWrapper = styled('div')<{isFullsceen:boolean}>`
    props.isFullsceen? '0':'auto'};
    right: ${(props) =>
    props.isFullsceen? '0':'auto'};
-   width: 100%;
+   width: 130%;
    min-height: ${(props) =>
    props.isFullsceen? '100vh':''};
    z-index: ${(props) =>
@@ -91,7 +91,7 @@ export const ListBtn = styled('button')<IListOrMosaicProps>`
     border-radius:3px;
     padding: 10px;
     background-color: ${({view}) =>
-    view === View.List ? `blue` : "transparent"};
+    view === View.List ? `grey` : "transparent"};
 `;
  export const Dots = styled('button')`
    background-image: url(${Icons.dotsIcon});
@@ -192,7 +192,7 @@ export const MosaicBtn = styled('button')<IListOrMosaicProps>`
     font-size: 15px;
     position:relative;
     padding: 5px 25px;
-    padding-left: 20px;
+    padding-left: 50px;
     font-weight: 500;
     height: 30px;
     outline: none;
@@ -202,12 +202,12 @@ export const MosaicBtn = styled('button')<IListOrMosaicProps>`
     font-weight: 600;
     border-radius:3px;
     background-color: ${({view}) =>
-    view === View.Mosaic ? `blue` : "transparent"};
+    view === View.Mosaic ? `grey` : "transparent"};
     ::before{
         content: url('${Icons.mosaicIcon}');
         position: absolute;
-        top:50%;
-        left:  14px;
+        top: 50%;
+        left: 14px;
         transform: translate(-50% , -50%);
         padding: 0 5px;   
     }
@@ -253,7 +253,7 @@ export const SingleEntityText = styled.div`
 `;
 export const FilterWrapper = styled.div`
   width: 100%;
-  max-width: 930px;
+  max-width: 990px;
   background-color: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   position: absolute;
