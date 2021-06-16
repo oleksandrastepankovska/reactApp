@@ -4,6 +4,11 @@ import Header from '../Header';
 import Profile from '../LeftProfile';
 import HomePage from '../HomePage'
 import Entities from '../Pages/EntitiesPage'
+import {ClientContract} from '../Pages/WorkspacesPages/ClientContract';
+import {Corporate} from '../Pages/WorkspacesPages/Corporate';
+import {GroupNorms} from '../Pages/WorkspacesPages/GroupNorms';
+import {RealEstateContracts} from '../Pages/WorkspacesPages/RealEstrateContracts';
+import {SupplierContract} from '../Pages/WorkspacesPages/SupplierContract';
 
 // styles
 import * as S from './styles';
@@ -87,6 +92,30 @@ function App() {
           </Route>
           <Route path="/administration">
             ADMINISTRATION
+          </Route>
+          <Route path="/publications">
+            PUBLICATIONS
+          </Route>
+          <Route path="/privacy">
+            PRIVACY
+          </Route>
+          <Route path="/settings">
+            SETTINGS
+          </Route>
+          <Route path="/ClientContract">
+            <ClientContract user = {User}/>
+          </Route>
+          <Route path="/Corporate">
+            <Corporate user = {User}/>
+          </Route>
+          <Route path="/GroupNorms">
+            <GroupNorms user = {User}/>
+          </Route>
+          <Route path="/RealEstateContracts">
+            <RealEstateContracts user = {User}/>
+          </Route>
+          <Route path="/SupplierContract">
+            <SupplierContract user = {User}/>
           </Route>
           <Route path="/">
             <HomePage user = {User}/>

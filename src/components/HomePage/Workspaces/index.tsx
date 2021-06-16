@@ -1,9 +1,11 @@
 import React from 'react';
 import * as S from './styles';
+import StyledLink from '../../Header/Dropdown';
 
 const WORKSPACES_ITEMS = [
     {
         imgUrl: 'https://picsum.photos/130',
+        path: '/ClientContract',
         text: 'Client contract',
         type: 'Contract',
         usersCont: 150,
@@ -13,7 +15,8 @@ const WORKSPACES_ITEMS = [
     },
     {
         imgUrl: 'https://picsum.photos/130',
-        text: 'Client contract',
+        path: '/SupplierContract',
+        text: 'Supplier Contract',
         type: 'Contract',
         usersCont: 150,
         date: '07 Jan 2020',
@@ -22,8 +25,9 @@ const WORKSPACES_ITEMS = [
     },
     {
         imgUrl: 'https://picsum.photos/130',
-        text: 'Client contract',
-        type: 'Contract',
+        path: '/Corporate',
+        text: 'Corporate',
+        type: 'Corporate',
         usersCont: 150,
         date: '07 Jan 2020',
         lastUpdate: 'Last update 2 days ago',
@@ -31,7 +35,8 @@ const WORKSPACES_ITEMS = [
     },
     {
         imgUrl: 'https://picsum.photos/130',
-        text: 'Client contract',
+        path: '/RealEstateContracts',
+        text: 'Real Estate Contracts',
         type: 'Contract',
         usersCont: 150,
         date: '07 Jan 2020',
@@ -40,6 +45,7 @@ const WORKSPACES_ITEMS = [
     },
     {
         imgUrl: 'https://picsum.photos/130',
+        path: '/ClientContract',
         text: 'Client contract',
         type: 'Contract',
         usersCont: 150,
@@ -49,7 +55,8 @@ const WORKSPACES_ITEMS = [
     },
     {
         imgUrl: 'https://picsum.photos/130',
-        text: 'Client contract',
+        path: '/GroupNorms',
+        text: 'Group Norms',
         type: 'Contract',
         usersCont: 150,
         date: '07 Jan 2020',
@@ -61,6 +68,7 @@ const WORKSPACES_ITEMS = [
 interface WorkspaceProps {
     key: number,
     imgUrl: string,
+    path: string,
     text: string,
     type: string,
     usersCont: number,
@@ -68,12 +76,12 @@ interface WorkspaceProps {
     lastUpdate: string,
 }
 
-const Workspace: React.FC <WorkspaceProps> = ({ imgUrl, text, type, usersCont, date, lastUpdate }) => (
+const Workspace: React.FC <WorkspaceProps> = ({ imgUrl, text, path, type, usersCont, date, lastUpdate }) => (
     <S.WorkspaceWrap>
         <S.Top src={imgUrl} alt="" />
         <S.Mid />
         <S.Bottom>
-            <S.WorkspaceTitle>{text}</S.WorkspaceTitle>
+            <S.WorkspaceTitle><a href={path} >{text}</a></S.WorkspaceTitle>
             <S.Info>
                 <S.InfoTop>{type} . {usersCont} users</S.InfoTop>
                 <S.Date>{date}</S.Date>
@@ -91,6 +99,7 @@ const Workspaces: React.FC = () => {
                     {WORKSPACES_ITEMS.map(item => (
                         <Workspace
                             key={item.id}
+                            path={item.path}
                             imgUrl={item.imgUrl}
                             text={item.text}
                             type={item.type}

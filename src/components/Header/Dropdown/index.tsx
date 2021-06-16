@@ -2,7 +2,7 @@ import { FC, useState, useEffect, useCallback } from 'react';
 import { Menu, Dropdown } from 'antd';
 import 'antd/dist/antd.css';
 import Icons from '../../../assets/index'
-import { MENU_ITEMS, MENU_ITEMS_TYPES, MENU_ITEMS_TYPES_LIST } from '../../common/MenuItems/index'
+import { MENU_ITEMS, MENU_ITEMS_TYPES_LIST } from '../../common/MenuItems/index'
 import * as S from './styles';
 
 interface IMenuView {
@@ -40,22 +40,21 @@ const MenuView: React.FC<IMenuView> = ({ setActiveItem }) => {
         <input onChange={onInputChange} placeholder="Filter" />
         {lists.platform.map((item:any) =>
           <Menu.Item onClick={() => setActiveItem(item)} key={item.title}>
-            <S.StyledLink to={`/${item.title}`}>
+            <S.StyledLink to={`${item.path}`}>
               <S.Icon alt="" src={item.iconSrc} />{item.title}
             </S.StyledLink>
           </Menu.Item>
         )}
         {lists.workspaces.map((item:any) =>
           <Menu.Item onClick={() => setActiveItem(item)} key={item.title}>
-            <S.StyledLink to={`/${item.title}`}>
+            <S.StyledLink to={`${item.path}`}>
               <S.Icon alt="" src={item.iconSrc} />{item.title}
             </S.StyledLink>
           </Menu.Item>
         )}
-        user
         {lists.user.map((item:any) =>
           <Menu.Item onClick={() => setActiveItem(item)} key={item.title}>
-            <S.StyledLink to={`/${item.title}`}>
+            <S.StyledLink to={`${item.path}`}>
               <S.Icon alt="" src={item.iconSrc} />{item.title}
             </S.StyledLink>
           </Menu.Item>

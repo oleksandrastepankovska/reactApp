@@ -56,9 +56,9 @@ export const WorkspaceTitle = styled.div`
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
-    padding-right: 45px;
+    padding-right: 5px;
     padding-top: 10px;
     margin-bottom: 25px;
 `;
