@@ -1,61 +1,98 @@
-import React from 'react';
-// styles
-import * as S from './styles';
+import React, {FC} from 'react';
+import { BigPublication } from './mainPublication';
+import { SmallPublication } from './smallPublication';
+import { PublicationsWrapper, SmallPublicationsWrapper} from './styles'
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { IState } from '../../../reducers';
+import { IPhotoReducer } from '../../../reducers/PhotoReducers';
+import { IPostsReducer } from '../../../reducers/PostsReducers';
+import { IUsersReducer } from '../../../reducers/UsersReducers';
+import { ISingleUser } from '../../../entities/Users';
+import Icons from '../../../assets';
 
 
-const PUBLICATION_ITEMS = [
-    {
-        imgUrl: 'https://picsum.photos/65',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit... and one more line for the demo',
-        userName:'John Doe',
-        date: '07 Jan 2020',
-    },
-    {
-        imgUrl: 'https://picsum.photos/65',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit... and one more line for the demo',
-        userName: 'John Doe',
-        date: '07 Jan 2020',
-    },
-    {
-        imgUrl: 'https://picsum.photos/65',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit... and one more line for the demo',
-        userName: 'John Doe',
-        date: '07 Jan 2020',
-    },
-];
 
-const Publications: React.FC = () => {
-    return (
-        <S.PublicationsWrap>
-            <S.Left>
-                <S.LeftText>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                </S.LeftText>
-                <S.LeftInfo>
-                    <S.LeftInfoDate>7 jan 2020</S.LeftInfoDate>
-                    <S.LeftInfoUser>John Doe</S.LeftInfoUser>
-                </S.LeftInfo>
-            </S.Left>
-            <S.Right>
-                <S.RightTitle>Latest Publications</S.RightTitle>
-                {PUBLICATION_ITEMS.map(({ imgUrl, text, userName, date }) => 
-                    <S.SmallPublication>
-                        <S.SmallPublicationImg src={imgUrl} alt="" />
-                        <div>
-                            <S.SmallPublicationText>
-                                {text}
-                            </S.SmallPublicationText>
-                            <S.SmallPublicationInfo>
-                                <S.SmallPublicationInfoDate>{date}</S.SmallPublicationInfoDate>
-                                <S.SmallPublicationInfoUser>{userName}</S.SmallPublicationInfoUser>
-                            </S.SmallPublicationInfo>
-                        </div>
-                    </S.SmallPublication>
-                )}
-                <S.SeeMore>See more publictions</S.SeeMore>
-            </S.Right>
-        </S.PublicationsWrap>
-    )
+interface IPublication{
+  id: number,
+
 }
+export const LatestPublications: FC <IPublication>= props =>{
+    const { photoList }= useSelector<IState, IPhotoReducer>(globalState => ({
+        ...globalState.photos
+      }))
+    
+     const { postsList }= useSelector<IState, IPostsReducer>(globalState => ({
+        ...globalState.posts
+      }))
+    const { usersList }= useSelector<IState, IUsersReducer>(globalState => ({
+        ...globalState.users
+      }))
 
-export default Publications;
+    function userPhoto(user : ISingleUser)  {
+        for (let i = 0; i < photoList.length; i++) {
+          const j = photoList[i];
+          if(j.id===user.id){
+            return j.url
+          }
+        }
+        return `${Icons.userIcon}`;
+    }
+    function postPhoto(user : ISingleUser)  {
+      if(user !== undefined){
+        for (let i = 0; i < photoList.length; i++) {
+          const j = photoList[i];
+          if(j.id===user.id){
+             return j.url
+          }
+        }
+      }
+        return 'https://picsum.photos/id/258/200';
+    }
+    function postBody(user : ISingleUser)  {
+      if(user !== undefined){      
+        for (let i = 0; i < postsList.length; i++) {
+          const post = postsList[i];
+          if(post.userId===user.id){
+            return post.body.slice(0,65);
+          }
+        } 
+      }
+
+      
+    }
+
+
+    const PostAuthor1 = usersList[2];
+    const PostAuthor2 = usersList[7];
+    const PostAuthor3 = usersList[2];
+    const PostAuthor4 = usersList[1];
+    return(
+        <PublicationsWrapper>
+            <BigPublication
+                imgUrl = {photoList? postPhoto(PostAuthor1):'https://picsum.photos/id/258/200'}
+                text = {postsList? postBody(PostAuthor1):"Lorem ipsum dolor sit amet, consectetur adipisicing elit."}
+                name = {PostAuthor1? PostAuthor1.name :""}
+            />
+            <SmallPublicationsWrapper>
+                <p>Latest publications</p>
+                <SmallPublication 
+                imgUrl = {photoList? postPhoto(PostAuthor2):'https://picsum.photos/id/258/200'}
+                text = {postsList?postBody(PostAuthor2):"Lorem ipsum dolor sit amet, consectetur adipisicing elit."}
+                userName = {PostAuthor2? PostAuthor2.name :""}
+                />
+                <SmallPublication 
+                imgUrl = {photoList?postPhoto(PostAuthor3):'https://picsum.photos/id/258/200'}
+                text = {postsList?postBody(PostAuthor3):"Lorem ipsum dolor sit amet, consectetur adipisicing elit."}
+                userName = {PostAuthor3? PostAuthor3.name :""}
+                />
+                <SmallPublication 
+                imgUrl = {photoList?postPhoto(PostAuthor4) :'https://picsum.photos/id/258/200'}
+                text = {postsList?postBody(PostAuthor4):"Lorem ipsum dolor sit amet, consectetur adipisicing elit."}
+                userName = {PostAuthor4? PostAuthor4.name :""}
+                />
+                <Link to ='/PublicationsPage'>See more publications</Link>
+            </SmallPublicationsWrapper>
+        </PublicationsWrapper>
+    );
+};

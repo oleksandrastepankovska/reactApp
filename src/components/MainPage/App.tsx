@@ -1,6 +1,6 @@
 import React, {FC, useEffect} from 'react';
 import {useDispatch} from 'react-redux';
-import Header from '../Header';
+import { Header } from '../Header/index';
 import Profile from '../LeftProfile';
 import HomePage from '../HomePage'
 import Entities from '../Pages/EntitiesPage'
@@ -9,6 +9,7 @@ import {Corporate} from '../Pages/WorkspacesPages/Corporate';
 import {GroupNorms} from '../Pages/WorkspacesPages/GroupNorms';
 import {RealEstateContracts} from '../Pages/WorkspacesPages/RealEstrateContracts';
 import {SupplierContract} from '../Pages/WorkspacesPages/SupplierContract';
+import {ProfilePage} from '../Pages/Profile'
 
 // styles
 import * as S from './styles';
@@ -79,7 +80,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
+        <Header user = {User}/>
         <S.Content>
           <Profile user = {User}/>
           <S.ContentRight>
@@ -90,17 +91,14 @@ function App() {
           <Route path="/people">
             PEOPLE
           </Route>
+          <Route path="/network">
+            NETWORK
+          </Route>
           <Route path="/administration">
             ADMINISTRATION
           </Route>
           <Route path="/publications">
             PUBLICATIONS
-          </Route>
-          <Route path="/privacy">
-            PRIVACY
-          </Route>
-          <Route path="/settings">
-            SETTINGS
           </Route>
           <Route path="/ClientContract">
             <ClientContract user = {User}/>
@@ -116,6 +114,9 @@ function App() {
           </Route>
           <Route path="/SupplierContract">
             <SupplierContract user = {User}/>
+          </Route>
+          <Route path="/Profile">
+            <ProfilePage user = {User}/>
           </Route>
           <Route path="/">
             <HomePage user = {User}/>

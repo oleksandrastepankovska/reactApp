@@ -14,7 +14,7 @@ export const Wrapper = styled.div `
 export const ProfileInfo = styled.div `
     text-align: center;
     width: 230px;
-    height: 245px;
+    height: 300px;
     padding: 15px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     border-radius: 4.5px;
@@ -25,6 +25,7 @@ export const Avatar = styled.img `
     height: 70px;
     margin: 10px;
 `;
+
 export const Name = styled.div `
     padding: 2px;
     margin: 5px;

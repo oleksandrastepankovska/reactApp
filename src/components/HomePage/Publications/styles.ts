@@ -1,75 +1,78 @@
 import styled from 'styled-components';
-import Icons from '../../../assets/index';
 
-export const PublicationsWrap = styled.div`
-    display: flex;
-    width: 980px;
+export const PublicationsWrapper = styled.div`
     height: 300px;
-    border-radius: 4.5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    margin-bottom: 10px;
+    display: flex;
+    box-shadow: 0 8px 6px -6px gray;
 `;
-
-export const Left = styled.div`
-    width: 320px;
-    background-image: url(https://picsum.photos/320?grayscale);
+export const BigPublicationWrapper = styled.div`
+    width: 350px;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
     color: #fff;
-    padding: 25px 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-`
+    position:relative;
+`;
+export const SmallPublicationsWrapper = styled.div`
+    height: 300px;
+    padding: 11px 20px;
+    background-color:white;
+    p{
+        margin:0;
+        display: block;
+        font-size: 23px;
+        font-weight: 500;
+    }
+    a{
+        color: blue;
+        font-weight: 500;
+    }
+`;
+export const PublicationInfo = styled('div')``;
+export const BigPublicationInfo = styled('div')`
+    position:absolute;
+    bottom: 10px;
+    margin: 15px;
+    padding: 7px;
+    font-weight: 300;
+    span{
+        padding-right: 10px;
+    }
+`;
 
-export const LeftText = styled.div`
-    font-size: 15px;
+
+export const BigPublicationText = styled.div`
     font-weight: 500;
-`;
-
-export const LeftInfo = styled.div`
-    display: flex;
-`
-
-export const LeftInfoDate = styled.div`
-    margin-right: 5px;
-`;
-
-export const LeftInfoUser = styled.div``;
-
-export const Right = styled.div`
-    padding: 5px 30px 6px 15px;
-`;
-
-export const RightTitle = styled.div`
-    margin-bottom: 5px;
-    font-size: 18px;
-    font-weight: 500;
-`;
-
-export const SmallPublication = styled.div`
-    display: flex;
-    margin-bottom: 10px;
-`;
-
-export const SmallPublicationText = styled.div``;
-
-export const SmallPublicationImg = styled.img`
-    margin-right: 10px;
-    height: 65px;
-    width: 65px;
-`;
-
-export const SmallPublicationInfo = styled.div`
-    display: flex;
-    font-size: 11px;
-`;
-
-export const SmallPublicationInfoDate = styled.div`
-    margin-right: 10px;
-`;
-
-export const SmallPublicationInfoUser = styled.div``;
-
-export const SeeMore = styled.div`
-    color: purple;
     font-size: 16px;
 `;
+export const SmallPublicationText = styled.div`
+    color: black;
+    font-weight: 500;
+`;
+export const SmallPublImg = styled.div`
+    width: 75px;
+    height: 65px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    margin-right: 7px;
+`;
+
+
+
+export const SmallPublicationsInner = styled.div`
+    display: flex;
+    align-items:center;
+    margin: 5px;
+    margin-left: 0px;
+`;
+export const PublDate = styled.span`
+    color: lightgrey;
+    margin-right: 5px;
+`;
+export const UserInfo = styled.div`
+    color: #192136;
+`;
+
+export const PublAuthor = styled.div``;

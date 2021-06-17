@@ -77,7 +77,7 @@ export const MENU_ITEMS = [
     },
     {
       title: 'Settings',
-      path: '/settings',
+      path: '/Profile',
       iconSrc: Icons.settingsIcon,
       type: MENU_ITEMS_TYPES.USER,
     },

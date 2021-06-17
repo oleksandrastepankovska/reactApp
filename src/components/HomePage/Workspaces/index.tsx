@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './styles';
-import StyledLink from '../../Header/Dropdown';
+import { SeeProfile } from '../../Header/Dropdown/styles';
 
 const WORKSPACES_ITEMS = [
     {

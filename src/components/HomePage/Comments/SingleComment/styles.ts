@@ -34,7 +34,6 @@ export const SingleCommentText = styled.div`
     font-size: 16px;
 `;
 export const CommentsWrapper = styled.div`
-    width: 990px;
     margin:10px 0;
 `;
 

@@ -1,84 +1,62 @@
-import { FC, useState, useEffect, useCallback } from 'react';
-import { Menu, Dropdown } from 'antd';
-import 'antd/dist/antd.css';
-import Icons from '../../../assets/index'
-import { MENU_ITEMS, MENU_ITEMS_TYPES_LIST } from '../../common/MenuItems/index'
-import * as S from './styles';
+import React, {ChangeEvent, ChangeEventHandler, FC, useState} from 'react';
+import { Link } from 'react-router-dom';
+import { CircleUl,CircleLi, Filter, Wrapper, Title, ScrollWrapper, LogOut, SeeProfile, UserBox, UserName, UserInfo, UserImage } from './styles';
 
-interface IMenuView {
-  setActiveItem: any;
+import Icons from '../../../assets'
+
+
+interface ICircleMenu{
+    name: string,
+    imgUrl: string;
 }
 
-const getItemsListByType = (type: string): any => MENU_ITEMS.filter(item => item.type === type);
 
-const getLists = () => MENU_ITEMS_TYPES_LIST.reduce((accumulator, currentValue) => {
-  const list = getItemsListByType(currentValue);
-  return accumulator = {
-    ...accumulator,
-    [currentValue]: list,
-  };
-}, {});
+export const CircleMenu: FC <ICircleMenu>=props=>{
 
-const MenuView: React.FC<IMenuView> = ({ setActiveItem }) => {
-    const [items, setItems] = useState(MENU_ITEMS);
 
-    const onInputChange = useCallback((e: any) => {
-      const inputValue = e.target.value.toLowerCase();
-      const newItems = MENU_ITEMS.filter(
-        item =>
-          item.title.toLowerCase().includes(inputValue)
-        );
-      setItems(newItems);
-    }, [setItems]);
+    const [inputText, setInputText] = useState<string>('');
+    const inputHandler = (e: ChangeEvent<HTMLInputElement>) =>{
+    const text= e.target.value;
+    setInputText(text);
+    }
 
-    const lists: any = getLists();
 
-    console.log(lists);
-
-    return (
-      <Menu>
-        <input onChange={onInputChange} placeholder="Filter" />
-        {lists.platform.map((item:any) =>
-          <Menu.Item onClick={() => setActiveItem(item)} key={item.title}>
-            <S.StyledLink to={`${item.path}`}>
-              <S.Icon alt="" src={item.iconSrc} />{item.title}
-            </S.StyledLink>
-          </Menu.Item>
-        )}
-        {lists.workspaces.map((item:any) =>
-          <Menu.Item onClick={() => setActiveItem(item)} key={item.title}>
-            <S.StyledLink to={`${item.path}`}>
-              <S.Icon alt="" src={item.iconSrc} />{item.title}
-            </S.StyledLink>
-          </Menu.Item>
-        )}
-        {lists.user.map((item:any) =>
-          <Menu.Item onClick={() => setActiveItem(item)} key={item.title}>
-            <S.StyledLink to={`${item.path}`}>
-              <S.Icon alt="" src={item.iconSrc} />{item.title}
-            </S.StyledLink>
-          </Menu.Item>
-        )}
-      </Menu>
+    return(
+    <Wrapper>
+            <Filter type="text" placeholder = "filter..."  value={inputText} onChange={inputHandler}></Filter>
+        <ScrollWrapper>
+           <Title>Platform</Title>
+           <CircleUl>
+                     {'Home'.toLowerCase().includes(inputText.toLowerCase())&& <CircleLi beforeImgUrl ={Icons.blackHouseIcon}  padding = '0px' ><Link to = "/">Home</Link></CircleLi>}
+                     {'Publications'.toLowerCase().includes(inputText.toLowerCase())&& <CircleLi beforeImgUrl ={Icons.yourPublicationsIcon} padding = '0px'><Link to  = "/publications">Publications</Link></CircleLi>}
+                     {'People'.toLowerCase().includes(inputText.toLowerCase())&& <CircleLi beforeImgUrl ={Icons.peopleIcon} padding = '0px'><Link to  = "/people">People</Link></CircleLi>}
+                     {'Entities'.toLowerCase().includes(inputText.toLowerCase())&& <CircleLi beforeImgUrl ={Icons.entities2Icon} padding = '0px'><Link to  = "/EntitiesPage">Entities</Link></CircleLi>}
+                     {'Administartions'.toLowerCase().includes(inputText.toLowerCase())&& <CircleLi beforeImgUrl ={Icons.adminIcon} padding = '0px'><Link to  = "/administration">Administration</Link></CircleLi>}
+            </CircleUl>
+            <Title>Workspaces</Title>
+             <CircleUl>
+                    {'Client Contract'.toLowerCase().includes(inputText.toLowerCase())&&<CircleLi beforeImgUrl={Icons.contractIcon}  padding = '0px' ><Link to = "/ClientContract">Client contract</Link></CircleLi>}
+                    {'Supplier contract'.toLowerCase().includes(inputText.toLowerCase())&&<CircleLi beforeImgUrl ={Icons.contractIcon} padding = '0px'><Link to = "/SupplierContract">Supplier contract</Link></CircleLi>}
+                    {'Corporate'.toLowerCase().includes(inputText.toLowerCase())&&<CircleLi beforeImgUrl ={Icons.entitiesIcon} padding = '0px'><Link to = "/Corporate">Corporate</Link></CircleLi>}
+                    {'Group Norms'.toLowerCase().includes(inputText.toLowerCase())&&<CircleLi beforeImgUrl ={Icons.bookIcon} padding = '0px'><Link to = "/GroupNorms">Group Norms</Link></CircleLi>}
+                    {'Real estate contracts'.toLowerCase().includes(inputText.toLowerCase())&&<CircleLi beforeImgUrl ={Icons.contractIcon} padding = '0px'><Link to = "/RealEstateContracts">Real estate contracts</Link></CircleLi>}
+            </CircleUl>
+        </ScrollWrapper>
+            <Title>Account</Title>
+             <CircleUl>
+                    <UserBox>
+                        <UserImage imgUrl = {props.imgUrl}></UserImage>
+                        <UserInfo>
+                            <UserName>{props.name}</UserName>
+                            <SeeProfile to = '/Profile'>See profile</SeeProfile>
+                        </UserInfo>
+                    </UserBox>
+                    <CircleLi beforeImgUrl ={Icons.privacyIcon}  padding = '0px' ><a href="#">Privacy</a></CircleLi>
+                    <CircleLi beforeImgUrl ={Icons.settingsIcon} padding = '0px'><a href="#">Settings</a></CircleLi>
+            </CircleUl>
+            <LogOut>Logout</LogOut>
+        </Wrapper>
+       
     );
+
 };
-
-const DropdownComponent = () => {
-  const defaultActiveItem = MENU_ITEMS[0];
-
-  const [activeItem, setActiveItem] = useState(defaultActiveItem);
-
-  return (
-    <Dropdown overlay={<MenuView setActiveItem={setActiveItem} />} trigger={['click']}>
-      <S.Home onClick={e => e.preventDefault()}>
-      <S.HomeRight>
-      <S.Icon src={activeItem.iconSrc} />
-      <p>{activeItem.title}</p>
-      </S.HomeRight>
-      <S.Icon src={Icons.arrowDownIcon} />
-      </S.Home>
-    </Dropdown>
-  )
-}
-
-export default DropdownComponent;

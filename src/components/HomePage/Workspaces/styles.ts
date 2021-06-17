@@ -42,7 +42,6 @@ export const Mid = styled.div`
     left: 10px;
     width: 75px;
     height: 80px;
-    z-index: 2;
     background-color: #fff;
 `;
 

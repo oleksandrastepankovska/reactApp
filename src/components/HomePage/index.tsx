@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import Publications from './Publications';
+import { LatestPublications } from './Publications/index';
 import Comments from './Comments';
 import Workspaces from './Workspaces';
 
@@ -12,7 +12,7 @@ interface IHomePage{
 const HomePage: React.FC<IHomePage> = (props) => {
     return(
         <div>
-            <Publications />
+            <LatestPublications id = {props.user.id}/>
             <Workspaces />
             <Comments id = {props.user.id}/>
         </div>
